@@ -1,0 +1,21 @@
+<table border="1" cellspacing="0" cellpadding="2" bordercolor="666633">
+  <% @items.each do |key, value| %>
+    <tr>
+        <td><strong><%= key.to_s %></strong></td>
+        <% if value.is_a?(Hash) %>
+          <td>
+            <table border="1" cellspacing="0" cellpadding="2" bordercolor="666633">
+              <% value.each do |k, v| %>
+                <tr>
+                  <td><%= k.to_s %></td>
+                  <td><%= v.to_s %></td>
+                </tr>
+              <% end %>
+            </table>
+          </td>
+        <% else %>
+          <td><%= value.to_s %></td>
+        <% end %>
+    </tr>
+  <% end %>
+</table>
